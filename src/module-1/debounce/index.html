@@ -8,7 +8,7 @@
 <body>
 
   <script type="module">
-    import { debounce } from './index.js';
+    import { debounce } from './solution';
 
     const obj = {
       nickname: 'John',
@@ -24,7 +24,6 @@
     const debounceGetName = debounce(obj.getName);
 
     // Note: should log "1" only one time
-    // Remark: console.error here is synchronous call that's why we recieve undefined
     console.error(debounceLog(1, 2));
     console.error(debounceLog(1, 3));
     console.error(debounceLog(1, 4));

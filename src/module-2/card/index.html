@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap">
@@ -10,7 +11,7 @@
   <div id="root"></div>
 
   <script type="module">
-    import Card from './index.js';
+    import Card from './solution/index.js';
     import { products } from '../../fixtures/products.js'
 
     const card = new Card(products[0]);
@@ -18,4 +19,5 @@
     root.append(card.element);
   </script>
 </body>
+
 </html>
