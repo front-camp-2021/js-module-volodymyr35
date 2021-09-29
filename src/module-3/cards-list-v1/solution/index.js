@@ -9,8 +9,8 @@ export default class CardsList {
   }
 
   render() {
-    const wrapper = document.createElement('div');
-    wrapper.classList.add('grid');
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("grid");
 
     this.data
       .map((item) => new this.Component(item).element)
@@ -28,7 +28,7 @@ export default class CardsList {
     this.render();
   }
 
-  remove () {
+  remove() {
     if (this.element) {
       this.element.remove();
     }
