@@ -21,40 +21,50 @@ export default class Card {
     this.render();
   }
 
-  render() {
-    const card = document.createElement("div");
-    card.classList.add("card");
-
-    card.innerHTML = `
-      <div class="card__inner">
+  getTemplate() {
+    return `
+      <div class="card__inner" data-element="body">
         <div class="card__img">
           <img src="${this.images[0]}" alt="product" />
         </div>
         <div class="card__details">
           <div class="card__rate-and-price">
             <button class="card__product--rate">${this.rating}&nbsp;
-              <img class="card__rate" src="./icons/star.svg" alt="">
+              <i class="bi bi-star"></i>
             </button>
             <span class="card__price">₴${this.price}</span>
           </div>
-          <h4 class="card__title">${this.title}</h4>
-          <p class="card__info">Redesigned from scratch and completely revised.</p>
+          <h4 class="card__title">${this.category}</h4>
+          <p class="card__info">${this.title}</p>
         </div>
       </div>
       <div class="card__actions">
         <button class="card__btn">
-          <img class="card__icon" src="./icons/heart.svg" alt="">&nbsp;Wishlist
+          <i class="bi bi-heart os-product-wish-icon"></i>&nbsp;Wishlist
         </button>
         <button class="card__btn card__btn--primary">
-          <img class="card__icon" src="./icons/shopping-bag.svg" alt="">&nbsp;Add to cart
+          <i class="bi bi-box-seam os-product-shopping-bag"></i>&nbsp;Add to cart
         </button>
       </div>
     `;
+  }
+
+  render() {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = this.getTemplate();
 
     this.element = card;
   }
 
+  remove () {
+    if (this.element) {
+      this.element.remove();
+    }
+  }
+
   destroy() {
+    this.remove();
     this.element = null;
   }
 }
