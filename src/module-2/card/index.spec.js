@@ -1,4 +1,4 @@
-import Card from "./index.js";
+import Card from "./solution/index.js";
 import { products } from "../../fixtures/products.js";
 
 describe("Card", () => {
