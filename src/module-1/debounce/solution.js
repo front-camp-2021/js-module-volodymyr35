@@ -1,10 +1,14 @@
 export const debounce = (fn, delay = 0) => {
-  let timeout;
+  let timerId;
 
   return function () {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
+    if (timerId) {
+      clearTimeout(timerId);
+    }
+
+    timerId = setTimeout(() => {
       fn.apply(this, arguments);
+      timerId = null;
     }, delay);
   };
 };

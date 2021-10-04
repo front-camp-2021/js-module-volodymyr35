@@ -15,7 +15,7 @@ export default class CardsList {
     this.data
       .map((item) => new this.Component(item).element)
       .forEach((el) => {
-        wrapper.appendChild(el);
+        wrapper.append(el);
       });
 
     this.element = wrapper;
