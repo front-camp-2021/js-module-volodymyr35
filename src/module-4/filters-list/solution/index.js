@@ -13,8 +13,14 @@ export default class FiltersList {
 
     return `
       <li>
-        <input class="custom-checkbox" type="checkbox" name="${name}"
-          id="${item.value}" ${item.checked ? "checked" : ""}>
+        <input
+          class="custom-checkbox"
+          type="checkbox"
+          name="${name}"
+          id="${item.value}"
+          value="${item.value}"
+          ${item.checked ? "checked" : ""}
+        >
         <label for="${item.value}">${item.title}</label>
       </li>
     `;
